@@ -1,0 +1,59 @@
+@use "global" as *;
+@use "sass:math";
+
+// *** main-view 画像切り替え ***//
+@keyframes zoomUp {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.15);
+    }
+}
+
+.swiper-slide-active .slide-img,
+.swiper-slide-duplicate-active .slide-img,
+.swiper-slide-prev .slide-img {
+    animation: zoomUp 10s linear 0s 1 normal both;
+}
+
+//imgタグだと下に隙間ができるのでblockに。
+.slide-img img {
+    display: block;
+}
+// *** top works 画像切り替え ***//
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: rem(-20.6);
+
+    @include mq("md"){
+        bottom: rem(-31);   
+        left: rem(-21);
+    }
+}
+
+.swiper-pagination-bullet {
+    background: #C4C4C4;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active.swiper-pagination-bullet {
+    background: #F9F871;
+    opacity: 1;
+}
+
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet:first-child{
+    margin: 0;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet:not(:first-child) {
+    margin-left: rem(11);
+    margin-right: 0;
+}
+// *** top works 画像切り替え end ***//

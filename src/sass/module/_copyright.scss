@@ -1,0 +1,14 @@
+@use "global" as *;
+
+.copyright p{
+    // display: inline-block;
+    font-size: rem(11);
+    font-weight: $regular;
+    color: $white;
+    letter-spacing: rem(1.2);
+    line-height: 1;
+
+    @include mq("md"){
+        font-size: rem(15);
+    }
+}

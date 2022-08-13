@@ -1,0 +1,75 @@
+@use "global" as *;
+
+.pagetop {
+    display: none;
+    position: fixed;
+    bottom: rem(41);
+    right: rem(20);
+    max-width: rem(45);
+    width: 100%;
+    max-height: rem(45);
+    height: 100%;
+    z-index: 10;
+
+    @include mq("md") {
+        bottom: rem(27);
+        right: rem(31);
+    }
+}
+
+.pagetop__button {
+    position: relative;
+    height: inherit;
+    width: inherit;
+    background: $white;
+    transition: all .3s;
+}
+
+.pagetop__button::before,
+.pagetop__button::after  {
+    content: "";
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    height:rem(2);
+    width: rem(19);
+    border-radius: rem(2);
+    background-color: $black;
+
+}
+.pagetop__button::before{
+    transform: translateX(-86%) translateY(-83%) rotate(-45deg);
+
+}
+.pagetop__button::after{
+    transform: translateX(-21%) translateY(-83%) rotate(45deg);
+
+}
+.pagetop__button--up {
+    // display: inline-block;
+    // vertical-align: middle;
+    // color: $gray;
+    // line-height: 1;
+    // width: 1em;
+    // height: 1em;
+    // border: 0.1em solid currentColor;
+    // border-left: 0;
+    // border-bottom: 0;
+    // box-sizing: border-box;
+    // transform: translateY(15%) rotate(-45deg);
+    // transition: all .3s;
+}
+
+/*** hover時処理 ***/
+.pagetop__button:hover {
+    @include mq("md"){
+        background: $gray;
+    }
+}
+
+.pagetop__button:hover .pagetop__button--up {
+    @include mq("md"){
+        color: $white;
+    }
+}
+/*** hover時処理 end ***/

@@ -1,0 +1,29 @@
+@use "global" as *;
+
+.hamburger-nav {
+    display: none;
+    position: fixed;
+    z-index: calc($header_z-index - 1);
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $black;
+    text-align: center;
+    overflow-y: scroll;
+}
+
+.hamburger-nav__lists{
+    padding-top: rem(192);
+    padding-bottom: rem(300);
+}
+.hamburger-nav__list{
+    color:$white;
+    font-size: rem(16);
+    letter-spacing: 0.125em;
+}
+
+.hamburger-nav__list a{
+    display: block;
+    padding: rem(15.5) 0;
+}

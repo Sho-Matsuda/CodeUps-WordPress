@@ -1,0 +1,35 @@
+@use "global" as *;
+
+.overview__title {
+    padding-top: rem(11);
+
+    @include mq("md") {
+        padding-top: rem(56);
+    }
+}
+
+.overview__title__ja-title {
+
+    @include mq("md") {
+        margin-top: rem(-78.7);
+    }
+}
+
+.overview__title__en-title {
+
+    @include mq("md") {
+        margin-top: rem(-32);
+        text-align: left;
+        letter-spacing: 0.023em;
+    }
+}
+
+.overview__main {
+    margin-top: rem(51);
+
+    @include mq("md") {
+        margin-top: rem(41);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

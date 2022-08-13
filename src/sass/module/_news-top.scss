@@ -1,0 +1,20 @@
+@use "global" as *;
+
+.news-top__main{
+
+    @include mq("md"){
+        display: flex;
+        gap: rem(48);
+        justify-content: center;
+        align-items: flex-start;
+
+    }
+}
+
+.news-top__button{
+    margin-top: rem(27);
+    text-align: center;
+    @include mq("md") {
+        margin-top: 0;
+    }
+}

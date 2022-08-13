@@ -1,0 +1,61 @@
+@use "global" as *;
+
+.header-nav{    
+    height: inherit;
+    color: $white;
+}
+
+.header-nav__lists{
+    height: inherit;
+    display: flex;
+    gap: rem(30);
+}
+
+.header-nav__list{
+    height: inherit;
+    font-size: rem(16);
+    letter-spacing: 0.125em;
+}
+.header-nav__list a{    
+    display: flex;
+    align-items: center;
+    height: inherit;
+    transition: all .4s;
+}
+
+.header-nav__list a span{
+    line-height: 2.1875;
+    border-bottom: 1px solid transparent;
+    transition: all .2s;
+}
+
+// hover 最終要素以外
+// .header-nav__list:not(:last-child) a:hover span{
+.header-nav__list:not(:last-child) a:hover span{
+        border-bottom: 1px solid #FFEA2E;
+}
+
+
+//最終要素のみ
+.header-nav__list:last-child a{
+    height: inherit;
+    background: $white;
+    color: $black;
+    padding: 0 rem(30) 0 rem(32);
+    transition: all .2s;
+
+}
+/*** hover時処理 ***/
+.header-nav__list:last-child a:hover{
+    @include mq("md"){
+        background: $gray;
+        color: $white;
+    }
+}
+
+.header-nav__list:last-child a:hover span{
+    @include mq("md"){
+        border-bottom: 1px solid #FFEA2E;
+    }
+}
+/*** hover時処理 end ***/

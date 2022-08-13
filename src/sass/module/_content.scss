@@ -1,0 +1,91 @@
+@use "global" as *;
+@use "sass:math";　
+
+.content__title{
+    padding-top: rem(11);
+    @include mq("md") {
+        
+        padding-top: rem(47);
+    }
+}
+
+
+.content__items {
+    margin-top: rem(52);
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mq("md") {
+        margin-top: rem(50);
+    }
+}
+
+.content__item {
+    position: relative;
+    width: 50%;
+
+    @include mq("md") {
+        width: 25%;
+    }
+}
+
+.content__img::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #FFFFFF;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+}
+.content__img:hover::after {
+    @include mq("md"){
+        opacity: 0.8;
+    }
+}
+
+.content__img {
+    position: relative;
+}
+
+.content__img::before {
+    content: "";
+    display: block;
+    padding-top: calc(math.div(168, 188) * 100%); // math.div(縦,横)
+
+    @include mq("md") {
+        padding-top: calc(math.div(320, 320) * 100%); // math.div(縦,横)
+    }
+}
+
+.content__img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content__text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    color: $white;
+    font-size: rem(20);
+    font-weight: $regular;
+    letter-spacing: 0.1em;
+    text-align: center;
+
+    @include mq("md") {
+        font-size: rem(25);
+        letter-spacing: 0.08em;
+    }
+}

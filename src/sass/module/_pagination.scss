@@ -1,0 +1,48 @@
+@use "global" as *;
+
+// WP paginate_links 想定
+
+.pagination .wp-pagenavi {
+    display: flex;
+    justify-content: center;
+}
+
+
+.pagination .wp-pagenavi a,
+.pagination .wp-pagenavi span {
+    display: inline-block;
+    color: $white;
+    width: rem(24);
+    line-height: 1;
+    text-align: center;
+    border: 1px solid $white;
+    padding: rem(2) 0 rem(4);
+}
+
+
+
+.pagination .wp-pagenavi .current {
+    background: $white;
+    color: $black;
+
+    @include mq("md") {
+        background: #F9F871;
+    }
+
+}
+
+.pagination .wp-pagenavi .previouspostslink,
+.pagination .wp-pagenavi .nextpostslink {
+    width: rem(71);
+    letter-spacing: 0.125em;
+}
+
+.pagination .wp-pagenavi *:not(:nth-child(1)):not(:nth-child(2)):not(.nextpostslink)
+{
+    margin-left: rem(16);
+}
+
+.pagination .wp-pagenavi *:nth-child(2),
+.pagination .wp-pagenavi *:last-child {
+    margin-left: rem(24);
+}

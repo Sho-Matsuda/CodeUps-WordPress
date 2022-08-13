@@ -1,0 +1,9 @@
+@use "global" as *;
+
+.subtop-select-cat {
+    margin-top: rem(71);
+
+    @include mq("md") {
+        margin-top: rem(101);
+    }
+}

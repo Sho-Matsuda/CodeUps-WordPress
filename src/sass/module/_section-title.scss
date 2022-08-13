@@ -1,0 +1,84 @@
+@use "global" as *;
+
+.section-title {
+    // text-align: center;
+
+    // @include mq("md") {
+    //     max-width: rem(1100);
+    //     width: 100%;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    // }
+}
+
+.sectin-title__main {
+    text-align: center;
+    // padding-top: rem(11);
+
+    @include mq("md") {
+        max-width: rem(1100);
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.section-title__ja-title {
+
+    font-size: rem(20);
+    font-weight: $regular;
+    color: $white;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    margin-top: rem(-7);
+
+    @include mq("md") {
+        font-size: rem(30);
+        margin-top: 0;
+        letter-spacing: 0.06667em;
+        margin-top: rem(-86);
+    }
+}
+
+.section-title__en-title {
+    font-family: $second-font-family;
+    font-size: rem(50);
+    font-weight: $regular;
+    color: $yelllow;
+    color: rgba($yelllow, 0.2);
+    letter-spacing: 0.045em;
+    line-height: 1;
+    position: relative;
+    z-index: -100;
+
+    @include mq("md") {
+        font-size: rem(110);
+        letter-spacing: 0.015em;
+
+    }
+}
+
+.section-title__en-title--contact {
+    z-index: 0;
+
+}
+
+.section-title__ja-title--contact {
+
+
+    @include mq("md") {
+        margin-top: rem(-39);
+    }
+}
+
+.section-title__en-title--right {
+    @include mq("md") {
+        text-align: right;
+    }
+}
+
+.section-title__en-title--left {
+    @include mq("md") {
+        text-align: left;
+    }
+}
