@@ -1,0 +1,35 @@
+@use "global" as *;
+
+.p-works__title {
+    padding-top: rem(14);
+
+    @include mq("md") {
+        padding-top: rem(56);
+    }
+}
+
+.p-works__title__ja-title {
+
+    @include mq("md") {
+        margin-top: rem(-78.7);
+    }
+}
+
+.p-works__title__en-title {
+
+    @include mq("md") {
+        margin-top: rem(-32);
+        text-align: right;
+        letter-spacing: 0.02em;
+    }
+}
+
+.p-works__main {
+    margin-top: rem(51);
+
+    @include mq("md") {
+        margin-top: rem(41);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

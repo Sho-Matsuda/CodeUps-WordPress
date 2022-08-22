@@ -1,0 +1,83 @@
+@use "global" as *;
+
+.p-contact__inner {
+    background: $gray;
+    width: 100%;
+    padding-top: rem(31);
+    padding-bottom: rem(64);
+    padding-right: $padding-sp;
+    padding-left: $padding-sp;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include mq("md") {
+        padding-top: rem(81);
+        padding-bottom: rem(149);
+        padding-right: $padding-pc;
+        padding-left: $padding-pc;
+    }
+}
+
+.p-contact__title {
+    max-width: rem(1100);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.p-contact__title__ja-title {
+    margin-top: rem(-9);
+
+    @include mq("md") {
+        margin-top: rem(-40);
+    }
+}
+
+.p-contact__title__en-title {
+    @include mq("md") {
+        text-align: left;
+        letter-spacing: 0.025em;
+    }
+}
+
+.p-contact__main {
+    display: flex;
+    justify-content: center;
+    margin-top: rem(20);
+
+    @include mq("md") {
+        margin-top: rem(24);
+    }
+}
+
+.p-contact__text {
+    color: $white;
+    font-size: rem(16);
+    font-weight: $regular;
+    line-height: 1.4375;
+    text-align: left;
+    letter-spacing: 0.125em;
+    margin-top: rem(4);
+
+    @include mq("md") {
+        margin-top: rem(2);
+    }
+}
+
+.p-contact__button {
+    margin-top: rem(47);
+    text-align: center;
+
+    @include mq("md") {
+        margin-top: rem(61);
+    }
+}
+
+.p-contact__button .button {
+    // font-size: rem(20);
+    // padding: rem(19) 0;
+    // letter-spacing: 0.1em;
+    // @include mq("md"){
+    //     font-weight: $regular;
+    // }
+}       

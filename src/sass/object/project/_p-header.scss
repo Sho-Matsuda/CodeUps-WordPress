@@ -1,0 +1,54 @@
+@use "global" as *;
+
+.p-header{
+    height: rem($header-height);
+    width: 100%;
+    background-color: rgba($black, 0.5);
+    transition: all .3s;
+    position: fixed;
+    z-index: $header_z-index;
+    width: 100%;
+}
+
+.p-header__scroll{
+    background-color: rgba($black, 1);
+}
+
+.p-header__inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: inherit;
+    padding-left:rem(22);
+    padding-right:rem(16);
+
+    @include mq("md"){
+        padding-left:rem(32);
+        padding-right: 0;
+    }
+}
+
+.p-header__logo{
+    margin-top: rem(4);
+    width: rem(72);
+    @include mq("md"){
+        margin-top: rem(6);
+        width: rem(96);
+    }
+}
+
+.p-header__nav{
+    display: none;
+    @include mq("md"){
+        display: block;
+    }
+}
+
+.p-header__hamburger-menu{
+    margin-top: rem(-9);
+    margin-right: rem(-1);
+
+    @include mq("md"){
+        display: none;
+    }
+}

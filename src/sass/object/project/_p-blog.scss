@@ -1,0 +1,61 @@
+@use "global" as *;
+
+
+
+.p-blog__title {
+    padding-top: rem(14);
+
+    @include mq("md") {
+        padding-top: rem(56);
+    }
+}
+
+.p-blog__title__ja-title {
+
+    @include mq("md") {
+        margin-top: rem(-70.7);
+    }
+}
+
+.p-blog__title__en-title {
+    @include mq("md") {
+        margin-top: rem(-30);
+        text-align: right;
+        letter-spacing: 0.017em;
+    }
+}
+
+.p-blog__main {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include mq("md") {
+        max-width: rem(1100);
+    }
+}
+
+.p-blog__cards{
+    padding-top: rem(68.2);
+
+    @include mq("md"){
+        padding-top: rem(43);
+    }
+}
+
+.p-blog__sub-cards{
+    padding-top: rem(20);
+
+    @include mq("md"){
+        padding-top: rem(20);
+    }
+}
+
+.p-blog__button {
+    text-align: center;
+    margin-top: rem(25);
+
+    @include mq("md") {
+        margin-top: rem(50);
+    }
+}

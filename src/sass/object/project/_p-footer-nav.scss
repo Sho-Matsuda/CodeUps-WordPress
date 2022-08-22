@@ -1,0 +1,54 @@
+@use "global" as *;
+
+.p-footer-nav {
+    color: $white;
+    font-size: rem(16);
+    letter-spacing: rem(1.2);
+    font-weight: $regular;
+}
+
+.p-footer-nav__lists{
+    margin-top: rem(7);
+    display: flex;
+    gap: rem(7);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include mq("md") {
+        flex-direction: row;
+        gap: rem(30);
+    }
+}
+
+.p-footer-nav__list {
+    height: inherit;
+}
+
+
+.p-footer-nav__list a {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    transition: all .4s;
+}
+
+.p-footer-nav__list a span {
+    @include mq("md") {
+        line-height: 2.1875;
+        border-bottom: 1px solid transparent;
+        transition: all .2s;
+    }
+    @include mq("md"){
+        letter-spacing: 0.125em;
+    }
+}
+
+/*** hover時処理 ***/
+.p-footer-nav__list a:hover span {
+    @include mq("md") {
+        border-bottom: 1px solid #FFEA2E;
+    }
+}
+/*** hover時処理 end ***/

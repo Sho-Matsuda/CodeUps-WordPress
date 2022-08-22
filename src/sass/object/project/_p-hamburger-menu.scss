@@ -1,0 +1,81 @@
+@use "global" as *;
+
+$span-gap: 4.5px;   //bar間隔
+$span-width: 26px;  //bar幅
+$span-height: 2px;  //bar高さ
+$span-color: #ffffff;   //bar色
+
+.p-hamburger-menu span {
+    display: block;
+    position: relative;
+    width: $span-width;
+    height: $span-height;
+    background: $span-color;
+    border-radius: 1px;
+    transition: all .4s;
+}
+
+.p-hamburger-menu span:nth-child(1) {
+    top: 0;
+}
+
+.p-hamburger-menu span:nth-child(2) {
+    margin-top: $span-gap;
+}
+
+.p-hamburger-menu span:nth-child(3) {
+    margin-top: $span-gap;
+}
+
+// open時処理
+.p-hamburger-menu.is-open span:nth-of-type(1) {
+    transform:  translateY(6.8px) rotate(-45deg);
+}
+
+.p-hamburger-menu.is-open span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.p-hamburger-menu.is-open span:nth-of-type(3) {
+    transform:  translateY(-6.8px) rotate(45deg);
+}
+
+// $span-gap: 4.5px;   //bar間隔
+// $span-width: 26px;  //bar幅
+// $span-height: 2px;  //bar高さ
+// $span-color: #ffffff;   //bar色
+
+// .p-hamburger-menu span {
+//     display: block;
+//     position: relative;
+//     width: $span-width;
+//     height: $span-height;
+//     background: $span-color;
+//     border-radius: 1px;
+//     transition: all .4s;
+// }
+
+// .p-hamburger-menu span:nth-child(1) {
+//     top: 0;
+// }
+
+// .p-hamburger-menu span:nth-child(2) {
+//     margin-top: $span-gap;
+// }
+
+// .p-hamburger-menu span:nth-child(3) {
+//     margin-top: $span-gap;
+// }
+
+// // open時処理
+// .p-hamburger-menu.is-open span:nth-of-type(1) {
+//     transform:  translateY(6.8px) rotate(-45deg);
+// }
+
+// .p-hamburger-menu.is-open span:nth-of-type(2) {
+//     opacity: 0;
+// }
+
+// .p-hamburger-menu.is-open span:nth-of-type(3) {
+//     transform:  translateY(-6.8px) rotate(45deg);
+// }

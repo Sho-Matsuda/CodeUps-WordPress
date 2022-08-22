@@ -14,7 +14,7 @@ const srcPath = {
   scss: "./src/sass/**/*.scss",
   js: "./src/js/**/*.js",
   img: "./src/images/**/*",
-  php: "./src/*.php",
+  php: "./src/**/*.php",
 };
 
 // WordPress　Localフォルダのディレクトリ

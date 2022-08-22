@@ -1,0 +1,113 @@
+@use "global" as *;
+@use "sass:math";
+// .p-sub-works__mainaaaa {
+//     margin-top: rem(51);
+
+//     @include mq("md") {
+//         margin-top: rem(41);
+//         margin-left: auto;
+//         margin-right: auto;
+//     }
+// }
+
+$card-gap-pc :rem(48);
+$card-line-num :2;
+
+.p-sub-works{
+    @include mq("md"){
+
+        padding: 0 rem(25);
+    }
+}
+
+.p-sub-works__inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(48);
+
+    @include mq("md"){
+        max-width: rem(1100);
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap:wrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: initial;
+        column-gap: $card-gap-pc;
+        row-gap: rem(114);
+        
+    }
+}
+
+.p-sub-works__list{
+    display: flex;
+    flex-direction: column;
+    
+    // margin-left: auto;
+    // margin-right: auto;
+    text-align: center;
+    gap: rem(12);
+
+    @include mq("md") {
+        // max-width: rem(525);
+        // width: 100%;
+
+        width: calc(math.div(100%, $card-line-num) - 
+            $card-gap-pc * ($card-line-num - 1) / $card-line-num);
+    }
+}
+
+// .p-sub-works__images {
+//     position: relative;
+
+//     @include mq("md") {
+//         // max-width: rem(525);
+//         // width: 100%;
+//     }
+// }
+
+.p-sub-works__image {
+    position: relative;
+}
+
+.p-sub-works__image::before {
+    content: "";
+    display: block;
+    padding-top: calc(math.div(249, 375) * 100%); // math.div(縦,横)
+
+    @include mq("md") {
+        padding-top: calc(math.div(349, 525) * 100%); // math.div(縦,横)
+    }
+}
+
+.p-sub-works__image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.p-sub-works__body {
+    text-align: center;
+    padding: 0 0 0;
+    margin: 0 auto;
+    
+    @include mq("md") {
+        max-width: rem(525);
+        width: 100%;
+    }
+}
+
+.p-sub-works__company {
+    color: $white;
+    font-size: rem(20);
+    font-weight: $regular;
+    letter-spacing: 0.1em;
+    line-height: 1.45;
+
+}
+

@@ -1,0 +1,61 @@
+@use "global" as *;
+
+.p-footer {
+    background: $black;
+    padding: rem(52) 0 rem(62);
+
+    @include mq("md") {
+        padding: rem(25) 0;
+    }
+}
+
+.p-footer__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 rem(32);
+    @include mq("md") {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 rem(30) 0 rem(29);
+    }
+}
+
+.p-footer__logo {
+    width: rem(72);
+    margin-left: rem(3);
+}
+
+.p-footer__nav-lists {
+    // margin-top: rem(7);
+    // display: flex;
+    // gap: rem(7);
+    // flex-direction: column;
+    // align-items: center;
+    // text-align: center;
+
+    // @include mq("md") {
+    //     flex-direction: row;
+    //     gap: rem(30);
+    // }
+}
+
+.p-footer__copyright {
+    text-align: center;
+    margin-top: rem(35);
+
+    @include mq("md"){
+        margin-top: rem(74);
+    }
+}
+.p-footer__copyright p{
+    font-size: rem(11);
+    font-weight: $regular;
+    color: $white;
+    letter-spacing: rem(1.2);
+    line-height: 1;
+
+    @include mq("md"){
+        font-size: rem(15);
+    }
+}

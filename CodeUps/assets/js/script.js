@@ -54,12 +54,12 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   hamburger_class.click(function () {
     if (hamburger_class.hasClass(hamburger_toggleclass)) {
       hamburger_class.removeClass(hamburger_toggleclass);
-      $('.header').removeClass('is-fixed');
-      $('.hamburger-nav').fadeOut(hamburger_interval);
+      $('.p-header').removeClass('is-fixed');
+      $('.p-hamburger-nav').fadeOut(hamburger_interval);
     } else {
       hamburger_class.addClass(hamburger_toggleclass);
-      $('.header').addClass('is-fixed');
-      $('.hamburger-nav').fadeIn(hamburger_interval);
+      $('.p-header').addClass('is-fixed');
+      $('.p-hamburger-nav').fadeIn(hamburger_interval);
     }
   });
 
@@ -85,6 +85,26 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     },
     loop:true,
   });
+
+  var swiper = new Swiper(".js-works-single-thumb-swiper", {
+    loop: true,
+    spaceBetween: 10,
+    slidesPerView: 3,
+    freeMode: true,
+    watchSlidesProgress: true,
+  });
+  var swiper2 = new Swiper(".js-works-single-swiper", {
+    loop: true,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: swiper,
+    },
+  });
+
 
 });
 

@@ -1,3 +1,11 @@
 <?php get_header(); ?>
-<main>aaaaa</main>
+
+<div class="l-no-mv"></div>
+
+<main>
+    <?php the_content() ?>
+</main>
+
+
+
 <?php get_footer(); ?>

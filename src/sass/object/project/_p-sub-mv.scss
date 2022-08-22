@@ -1,0 +1,114 @@
+@use "global" as *;
+@use "sass:math";
+
+
+.p-sub-mv {
+    position: relative;
+}
+
+.p-sub-mv__main {
+    position: absolute;
+    z-index: $main-view__main_z-index; //swiperがzーindex１
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.p-sub-mv__title {
+    text-align: center;
+    color: $white;
+    font-size: rem(30);
+    font-weight: $bold;
+    line-height: 1;
+    letter-spacing: 0.066666em;
+
+    @include mq("md") {
+        font-size: rem(35);
+        letter-spacing: 0.057143em;
+    }
+}
+
+.p-sub-mv__ratio {
+    position: relative;
+}
+
+.p-sub-mv__ratio::before {
+    content: "";
+    display: block;
+    padding-top: calc(math.div(425, 375) * 100%); // math.div(縦,横)
+
+    @include mq("md") {
+        padding-top: min(100vh, calc(math.div(370, 1280) * 100%)); // math.div(縦,横)
+
+    }
+}
+
+// ブログ一覧ページ
+.p-sub-mv__image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+//ブログ
+.p-sub-mv__image--blog{
+    background-image: url(../images/sub-mv/blog-sp.jpg);
+
+    @include mq("md") {
+        background-image: url(../images/sub-mv/blog-pc.jpg);
+    }
+}
+
+// お知らせ
+.p-sub-mv__image--news{
+    background-image: url(../images/sub-mv/news-sp.jpg);
+
+    @include mq("md") {
+        background-image: url(../images/sub-mv/news-pc.jpg);
+    }
+}
+
+//事業内容
+.p-sub-mv__image--content{
+    background-image: url(../images/sub-mv/content-sp.jpg);
+
+    @include mq("md") {
+        background-image: url(../images/sub-mv/content-pc.jpg);
+    }
+}
+
+//企業概要
+.p-sub-mv__image--overview{
+    background-image: url(../images/sub-mv/overview-sp.jpg);
+
+    @include mq("md") {
+        background-image: url(../images/sub-mv/overview-pc.jpg);
+    }
+}
+
+//制作実績
+.p-sub-mv__image--works{
+    background-image: url(../images/sub-mv/works-sp.jpg);
+
+    @include mq("md") {
+        background-image: url(../images/sub-mv/works-pc.jpg);
+    }
+}
+
+//お問い合わせ
+.p-sub-mv__image--contact{
+    background-image: url(../images/sub-mv/contact-sp.jpg);
+
+    @include mq("md") {
+        background-image: url(../images/sub-mv/contact-pc.jpg);
+    }
+}

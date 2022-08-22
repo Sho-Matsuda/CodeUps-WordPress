@@ -1,0 +1,45 @@
+@use "global" as *;
+
+.c-select-cat__inner{
+    max-width: rem(600);
+    margin-left: auto;
+    margin-right: auto;
+    
+    @include mq("md"){
+        padding: 0;
+        max-width: initial;
+    }
+}
+
+.c-select-cat__lists{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: rem(24);
+    row-gap: rem(16);
+    align-items: center;
+
+    @include mq("md"){
+        column-gap: rem(39);
+    row-gap: rem(11);
+
+    }
+}
+
+.c-select-cat__list{
+    
+    font-size: rem(16);
+    font-weight: $regular;
+    letter-spacing: 0.125em;
+    color: $white;
+    line-height: 1.4375;
+}
+
+.c-select-cat__list.c-select-cat__list--current{
+    color: $black;
+    background-color: $white;
+    padding: rem(3) rem(7) rem(4) rem(8);
+
+    @include mq("md"){
+        padding: rem(3) rem(9) rem(4) rem(10);
+    }
+}

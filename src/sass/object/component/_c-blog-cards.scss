@@ -1,0 +1,31 @@
+@use "global" as *;
+@use "sass:math";
+
+$card-gap-pc :rem(25);
+$card-line-num :3;
+
+.c-blog-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: rem(25.8);
+    align-items: center;
+    
+    @include mq("md") {
+        flex-direction: row;
+        column-gap: $card-gap-pc;
+        row-gap: rem(50.5);
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: initial;
+
+    }
+}
+
+.c-blog-cards__list {
+
+    @include mq("md") {
+        width: calc(math.div(100%, $card-line-num) - 
+            $card-gap-pc * ($card-line-num - 1) / $card-line-num);
+    }
+}
