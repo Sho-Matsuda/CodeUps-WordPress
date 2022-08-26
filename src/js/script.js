@@ -1,7 +1,9 @@
 
+
+
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
 
-  // スムーススクロール (絶対パスのリンク先が現在のページであった場合でも作動)
+  //スムーススクロール (絶対パスのリンク先が現在のページであった場合でも作動)
   $(document).on('click', 'a[href*="#"]', function () {
     let time = 400;
     let header = $('header').innerHeight();
@@ -11,14 +13,25 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     $('html,body').animate({ scrollTop: targetY }, time, 'swing');
     return false;
   });
+  window.onload = function () {
+    var params = (new URL(document.location)).searchParams;
+    if (document.URL.match(/content/)) {
+      var param = params.get('ver')
+      // alert(params.get('ver'));
+      let header = $('header').innerHeight();
+      let time = 400;
+      let targetY = $('#' + param).offset().top - header - 20;
+      $('html,body').animate({ scrollTop: targetY }, time, 'swing');
+    }
+  }
 
   /* pagetop トップへスクロール */
   var topBtn = $('.js-pagetop');
   topBtn.hide();
 
-  var mainview_height = $(".main-view").height(); 
-  var page_mainview_height = $(".page-main-view").height(); 
-  var header_height = $(".header").height(); 
+  var mainview_height = $(".main-view").height();
+  var page_mainview_height = $(".page-main-view").height();
+  var header_height = $(".header").height();
 
   // ボタンの表示設定
   $(window).scroll(function () {
@@ -32,7 +45,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
     if ($(this).scrollTop() > (mainview_height - header_height) || $(this).scrollTop() > (page_mainview_height - header_height)) {
       $(".header").addClass('header__scroll');
-    }else{
+    } else {
       $(".header").removeClass('header__scroll');
     }
   });
@@ -50,7 +63,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   var hamburger_class = $('.js-hamburger');  //triger class
   var hamburger_toggleclass = 'is-open';  //toggle class
   var hamburger_interval = 400;
-  
+
   hamburger_class.click(function () {
     if (hamburger_class.hasClass(hamburger_toggleclass)) {
       hamburger_class.removeClass(hamburger_toggleclass);
@@ -83,28 +96,55 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     autoplay: {
       delay: 5000,
     },
-    loop:true,
+    loop: true,
   });
 
-  var swiper = new Swiper(".js-works-single-thumb-swiper", {
+  // var swiper = new Swiper(".js-works-single-thumb-swiper", {
+  //   loop: true,
+  //   spaceBetween: 10,
+  //   slidesPerView: 1,
+  //   centeredSlides: true,
+  //   freeMode: true,
+  //   watchSlidesProgress: true,
+  // });
+  // var swiper2 = new Swiper(".js-works-single-swiper", {
+  //   loop: true,
+  //   spaceBetween: 10,
+  //   navigation: {
+  //     nextEl: ".swiper-button-next",
+  //     prevEl: ".swiper-button-prev",
+  //   },
+  //   thumbs: {
+  //     swiper: swiper,
+  //   },
+  // });
+
+  //メイン
+  var wokrs_intro_cnt = $(".p-works-intro__image").length;
+  var slider = new Swiper('.js-works-single-swiper', {
+    slidesPerView: 1,
+    centeredSlides: true,
     loop: true,
-    spaceBetween: 10,
-    slidesPerView: 3,
-    freeMode: true,
-    watchSlidesProgress: true,
-  });
-  var swiper2 = new Swiper(".js-works-single-swiper", {
-    loop: true,
-    spaceBetween: 10,
+    loopedSlides: wokrs_intro_cnt, //スライドの枚数と同じ値を指定
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    thumbs: {
-      swiper: swiper,
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
   });
 
+  //サムネイル
+  var thumbs = new Swiper('.js-works-single-thumb-swiper', {
+    slidesPerView: 'auto',
+    // spaceBetween: 10,
+    centeredSlides: true,
+    loop: true,
+    slideToClickedSlide: true,
+  });
+
+  //4系～
+  //メインとサムネイルを紐づける
+  slider.controller.control = thumbs;
+  thumbs.controller.control = slider;
 
 });
 

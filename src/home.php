@@ -45,7 +45,7 @@
                                         <?php else : ?>
 
                                         <?php endif; ?>
-                                        <p class="c-blog-card__time"><time datetime="<?php the_time('Y-m-d') ?>"><?php the_time(get_option('date_format')); ?></time></p>
+                                        <p class="c-blog-card__time"><time datetime="<?php the_time('c') ?>"><?php the_time(get_option('date_format')); ?></time></p>
                                     </div>
                                 </div>
                             </a>

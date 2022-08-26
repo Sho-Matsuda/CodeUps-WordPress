@@ -1,0 +1,47 @@
+@use "global" as *;
+
+.p-overview-main{
+    color: $white;
+}
+
+.p-overview-main__inner{
+
+}
+
+.p-overview-main__table{
+    width: 100%;
+
+}
+
+.p-overview-main__table tr{
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid $white;
+    
+
+}
+
+.p-overview-main__table th,
+.p-overview-main__table td{
+    font-size: rem(13);
+    font-weight: $regular;
+    text-align: left;
+    line-height: 1.61538;
+    padding:rem(18) 0;
+
+    @include mq("md"){
+        font-size: rem(16);
+        line-height: 1.4375;
+        padding:rem(29) 0;
+
+    }
+}
+
+.p-overview-main__table th{
+    min-width: rem(109);
+    padding-left: rem(5);
+    @include mq("md"){
+        min-width: rem(152);
+    }
+}   
+

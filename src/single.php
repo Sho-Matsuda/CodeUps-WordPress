@@ -3,7 +3,9 @@
 <div class="l-no-mv"></div>
 
 <main>
-    <?php the_content() ?>
+    <div class="test-color">
+        <?php the_content() ?>
+    </div>
 </main>
 
 

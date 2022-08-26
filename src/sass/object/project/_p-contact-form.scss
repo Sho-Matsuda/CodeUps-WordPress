@@ -1,0 +1,122 @@
+@use "global" as *;
+
+.p-contact-form {
+    
+}
+
+.p-contact-form__inner {
+    max-width: rem(450);
+    width: 100%;
+    padding-right: $padding-sp;
+    padding-left: $padding-sp;
+    margin-right: auto;
+    margin-left: auto;
+    @include mq("md") {
+      max-width: rem(832);
+      padding-right: $padding-pc;
+      padding-left: $padding-pc;
+    }
+}
+
+.wpcf7-form{
+
+    @include mq("md"){
+        padding-right: rem(146);
+
+    }
+}
+//label
+.p-contact-form__main label {
+    color: $white;
+    font-size: rem(14);
+    font-weight: $regular;
+    letter-spacing: 0.05em;
+    line-height: 1.714285;
+    text-align: left;
+
+    @include mq("md"){
+        max-width: rem(700);
+        width: 100%;
+        margin: 0 auto;
+        // display: inline;
+
+    }
+}
+.p-contact-form__main label br{
+    display: none;
+}
+
+
+.p-contact-form__main input[type="text"],
+.p-contact-form__main input[type="email"],
+.p-contact-form__main textarea {
+    // display: inline-block;
+    font-size: rem(14);
+    letter-spacing: 0.05em;
+    line-height: 1.85;
+    padding: rem(10);
+    background-color: $white;
+    width: 100%;
+
+    @include mq("md"){
+
+        max-width: rem(540);;
+    }
+}
+
+
+.wpcf7-form > p{
+    @include mq("md"){
+        text-align: right;
+    }
+}
+
+.p-contact-form__main input[type="text"].wpcf7-not-valid,
+.p-contact-form__main input[type="email"].wpcf7-not-valid,
+.p-contact-form__main textarea.wpcf7-not-valid {
+
+    background: #FFDCDC;
+}
+
+.p-contact-form__main input[type="submit"] {
+    color: #333333;
+    background-color: $white;
+    font-size: rem(20);
+    font-weight: $regular;
+    letter-spacing: 0.1em;
+    line-height: 1.45;
+    width: 100%;
+    padding: rem(22) 0;
+    display: inline-block;
+
+
+
+}
+
+//項目ごと下のエラーメッセージ
+.wpcf7-not-valid-tip,
+.wpcf7-spinner {
+    display: none;
+}
+
+//入力欄 エラー時
+.wpcf7-not-valid {
+    background: #FFDCDC;
+}
+
+//メッセージ　標準メッセージ
+.wpcf7-response-output {
+    color: $white;
+}
+
+//メッセージ 枠削除
+.wpcf7 form .wpcf7-response-output{
+    border: none;
+}
+
+//メッセージ 入力エラー
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+.wpcf7 form.payment-required .wpcf7-response-output {
+    color: red;
+}

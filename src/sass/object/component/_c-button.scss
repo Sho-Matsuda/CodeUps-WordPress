@@ -95,3 +95,12 @@
     }
 }
 /*** pc時 Top news button  end ***/
+
+/*** 404ページ ***/
+.c-button--lerge{
+    padding: rem(15) 0;
+
+    @include mq("md"){
+        padding: rem(22) 0;
+    }
+}

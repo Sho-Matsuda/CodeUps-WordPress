@@ -18,7 +18,7 @@ endif;
             <p class="p-contact__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
         </div>
         <div class="p-contact__button">
-            <a href="" class="c-button"><span>お問い合わせへ</span></a>
+            <a href="<?php echo esc_url(home_url('/contact')) ?>" class="c-button"><span>お問い合わせへ</span></a>
         </div>
     </div>
 </section>

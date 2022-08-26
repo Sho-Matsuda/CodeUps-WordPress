@@ -1,0 +1,32 @@
+@use "global" as *;
+
+.p-error {
+    text-align: center;
+}
+
+.p-error__title {
+    color: rgba(#FFEA2E, 0.3);
+    font-size: rem(40);
+    letter-spacing: 0.05em;
+
+    @include mq("md") {
+        font-size: rem(60);
+        letter-spacing: 0.033333em;
+    }
+}
+
+
+.p-error__text {
+    margin-top: rem(80);
+    color: $white;
+    line-height: 1.45;
+    letter-spacing: 0.1em;
+
+    @include mq("md"){
+
+    }
+}
+
+.p-error__button{
+    margin-top: rem(80);
+}

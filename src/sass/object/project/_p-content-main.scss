@@ -1,0 +1,51 @@
+@use "global" as *;
+
+.p-content-main__inner {
+    padding-right: $padding-sp;
+    padding-left: $padding-sp;
+
+    @include mq("md") {
+
+        padding-right: $padding-pc;
+        padding-left: $padding-pc;
+    }
+}
+
+.p-content-main__body {
+
+    margin-right: auto;
+    margin-left: auto;
+
+    @include mq("md") {
+        max-width: rem(570);
+        width: 100%;
+    }
+}
+
+
+.p-content-main__title,
+.p-content-main__text {
+    color: $white;
+    font-weight: $regular;
+}
+
+.p-content-main__title {
+    text-align: center;
+    font-size: rem(20);
+    letter-spacing: 0.08em;
+
+    @include mq("md") {
+        font-size: rem(25);
+    }
+}
+
+.p-content-main__text {
+    margin-top: rem(24);
+    font-size: rem(16);
+    line-height: 1.4375;
+    letter-spacing: 0.125em;
+
+    @include mq("md") {
+        line-height: 2.1875;
+    }
+}

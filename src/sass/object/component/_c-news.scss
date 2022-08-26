@@ -3,6 +3,8 @@
 
 
 .c-news__list {
+    width: 100%;
+    
     @include mq("md") {
         display: flex;
         align-items: flex-start;

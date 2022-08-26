@@ -1,0 +1,105 @@
+@use "global" as *;
+@use "sass:math";
+
+.p-content-sub__inner {
+
+    display: flex;
+    flex-direction: column;
+    gap: rem(48);
+
+    @include mq("md") {
+        padding-right: $padding-pc;
+        padding-left: $padding-pc;
+        gap: rem(104);
+    }
+}
+
+.p-content-sub__list {
+    @include mq("md") {
+        display: flex;
+        max-width: $inner;
+        width: 100%;
+        margin: 0 auto;
+        gap: rem(30);
+    }
+}
+
+.p-content-sub__list:nth-child(even){
+    @include mq("md") {
+        flex-direction: row-reverse;
+    }
+}
+
+.p-content-sub__img {
+    position: relative;
+
+    @include mq("md") {
+        min-width: rem(550);
+    }
+}
+
+.p-content-sub__img::before {
+    content: "";
+    display: block;
+    padding-top: calc(math.div(261, 374) * 100%); // math.div(縦,横)
+
+    @include mq("md") {
+        padding-top: calc(math.div(367, 550) * 100%); // math.div(縦,横)
+    }
+}
+
+.p-content-sub__img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.p-content-sub__main {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: rem(24);
+    padding-right: $padding-sp;
+    padding-left: $padding-sp;
+
+    @include mq("md") {
+        // max-width: rem(570);
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+
+.p-content-sub__title,
+.p-content-sub__text {
+    color: $white;
+    font-weight: $regular;
+}
+
+.p-content-sub__title {
+    text-align: center;
+    font-size: rem(20);
+    letter-spacing: 0.08em;
+
+    @include mq("md") {
+        text-align: left;
+        font-size: rem(25);
+    }
+}
+
+.p-content-sub__text {
+    margin-top: rem(24);
+    font-size: rem(16);
+    line-height: 1.4375;
+    letter-spacing: 0.125em;
+
+    @include mq("md") {
+        line-height: 2.1875;
+        letter-spacing: 0.03125em;
+    }
+}
