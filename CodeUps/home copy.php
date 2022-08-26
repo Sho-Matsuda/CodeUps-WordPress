@@ -47,133 +47,12 @@
                                         <?php else : ?>
 
                                         <?php endif; ?>
-                                        <p class="c-blog-card__time"><time datetime="<?php the_time('Y-m-d') ?>"><?php the_time(get_option('date_format')); ?></time></p>
+                                        <p class="c-blog-card__time"><time datetime="<?php the_time('c') ?>"><?php the_time(get_option('date_format')); ?></time></p>
                                     </div>
                                 </div>
                             </a>
                     <?php endwhile;
                     endif; ?>
-
-                    <!-- <a href="" class="c-blog-card c-blog-cards__list">
-                    <div class="c-blog-card__img">
-                        <img src="./images/blog2.jpg" alt="">
-                    </div>
-                    <div class="c-blog-card__inner">
-                        <div class="c-blog-card__main-text">
-                            <h3 class="c-blog-card__title">タイトルが入ります。タイトルが入ります。</h3>
-                            <p class="c-blog-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</p>
-                        </div>
-                        <div class="c-blog-card__info">
-                            <p class="c-blog-card__category">カテゴリ</p>
-                            <p class="c-blog-card__time"><time datetime="2021-07-20">2021.07.20</time></p>
-                        </div>
-                    </div>
-                </a>
-                <a href="" class="c-blog-card c-blog-cards__list">
-                    <div class="c-blog-card__img">
-                        <img src="./images/blog3.jpg" alt="">
-                    </div>
-                    <div class="c-blog-card__inner">
-                        <div class="c-blog-card__main-text">
-                            <h3 class="c-blog-card__title">タイトルが入ります。タイトルが入ります。</h3>
-                            <p class="c-blog-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</p>
-                        </div>
-                        <div class="c-blog-card__info">
-                            <p class="c-blog-card__category">カテゴリ</p>
-                            <p class="c-blog-card__time"><time datetime="2021-07-20">2021.07.20</time></p>
-                        </div>
-                    </div>
-                </a>
-                <a href="" class="c-blog-card c-blog-cards__list">
-                    <div class="c-blog-card__img">
-                        <img src="./images/blog4.jpg" alt="">
-                    </div>
-                    <div class="c-blog-card__inner">
-                        <div class="c-blog-card__main-text">
-                            <h3 class="c-blog-card__title">タイトルが入ります。タイトルが入ります。</h3>
-                            <p class="c-blog-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</p>
-                        </div>
-                        <div class="c-blog-card__info">
-                            <p class="c-blog-card__category">カテゴリ</p>
-                            <p class="c-blog-card__time"><time datetime="2021-07-20">2021.07.20</time></p>
-                        </div>
-                    </div>
-                </a>
-                <a href="" class="c-blog-card c-blog-cards__list">
-                    <div class="c-blog-card__img">
-                        <img src="./images/blog5.jpg" alt="">
-                    </div>
-                    <div class="c-blog-card__inner">
-                        <div class="c-blog-card__main-text">
-                            <h3 class="c-blog-card__title">タイトルが入ります。タイトルが入ります。</h3>
-                            <p class="c-blog-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</p>
-                        </div>
-                        <div class="c-blog-card__info">
-                            <p class="c-blog-card__category">カテゴリ</p>
-                            <p class="c-blog-card__time"><time datetime="2021-07-20">2021.07.20</time></p>
-                        </div>
-                    </div>
-                </a>
-                <a href="" class="c-blog-card c-blog-cards__list">
-                    <div class="c-blog-card__img">
-                        <img src="./images/blog6.jpg" alt="">
-                    </div>
-                    <div class="c-blog-card__inner">
-                        <div class="c-blog-card__main-text">
-                            <h3 class="c-blog-card__title">タイトルが入ります。タイトルが入ります。</h3>
-                            <p class="c-blog-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</p>
-                        </div>
-                        <div class="c-blog-card__info">
-                            <p class="c-blog-card__category">カテゴリ</p>
-                            <p class="c-blog-card__time"><time datetime="2021-07-20">2021.07.20</time></p>
-                        </div>
-                    </div>
-                </a>
-                <a href="" class="c-blog-card c-blog-cards__list">
-                    <div class="c-blog-card__img">
-                        <img src="./images/blog7.jpg" alt="">
-                    </div>
-                    <div class="c-blog-card__inner">
-                        <div class="c-blog-card__main-text">
-                            <h3 class="c-blog-card__title">タイトルが入ります。タイトルが入ります。</h3>
-                            <p class="c-blog-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</p>
-                        </div>
-                        <div class="c-blog-card__info">
-                            <p class="c-blog-card__category">カテゴリ</p>
-                            <p class="c-blog-card__time"><time datetime="2021-07-20">2021.07.20</time></p>
-                        </div>
-                    </div>
-                </a>
-                <a href="" class="c-blog-card c-blog-cards__list">
-                    <div class="c-blog-card__img">
-                        <img src="./images/blog8.jpg" alt="">
-                    </div>
-                    <div class="c-blog-card__inner">
-                        <div class="c-blog-card__main-text">
-                            <h3 class="c-blog-card__title">タイトルが入ります。タイトルが入ります。</h3>
-                            <p class="c-blog-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</p>
-                        </div>
-                        <div class="c-blog-card__info">
-                            <p class="c-blog-card__category">カテゴリ</p>
-                            <p class="c-blog-card__time"><time datetime="2021-07-20">2021.07.20</time></p>
-                        </div>
-                    </div>
-                </a>
-                <a href="" class="c-blog-card c-blog-cards__list">
-                    <div class="c-blog-card__img">
-                        <img src="./images/blog9.jpg" alt="">
-                    </div>
-                    <div class="c-blog-card__inner">
-                        <div class="c-blog-card__main-text">
-                            <h3 class="c-blog-card__title">タイトルが入ります。タイトルが入ります。</h3>
-                            <p class="c-blog-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</p>
-                        </div>
-                        <div class="c-blog-card__info">
-                            <p class="c-blog-card__category">カテゴリ</p>
-                            <p class="c-blog-card__time"><time datetime="2021-07-20">2021.07.20</time></p>
-                        </div>
-                    </div>
-                </a> -->
                 </div>
             </div>
         </div>
@@ -185,15 +64,6 @@
             wp_pagenavi();
         ?>
         <?php endif; ?>
-
-        <!-- <div class="wp-pagenavi">
-            <a class="previouspostslink" href="">PREV</a>
-            <span class="current">1</span>
-            <a class="page larger" href="">2</a>
-            <a class="page larger" href="">3</a>
-            <a class="page larger" href="">4</a>
-            <a class="nextpostslink" href="">NEXT</a>
-        </div> -->
     </div>
 
     <section class="p-contact l-sub-contact">

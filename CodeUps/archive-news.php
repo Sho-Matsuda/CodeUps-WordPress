@@ -7,7 +7,7 @@
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                         <div class="c-news__list">
                             <div class="c-news__info">
-                                <p class="c-news__time"><time datetime="<?php the_time('Y-m-d') ?>"><?php the_time(get_option('date_format')); ?></time></p>
+                                <p class="c-news__time"><time datetime="<?php the_time('c') ?>"><?php the_time(get_option('date_format')); ?></time></p>
                                 <?php
                                 $categories = get_the_terms($post->ID, 'news-category');
                                 if ($categories) : ?>

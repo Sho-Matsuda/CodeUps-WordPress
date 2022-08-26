@@ -11,11 +11,11 @@
                 <ol class="p-footer-nav__lists">
                     <li class="p-footer-nav__list"><a href="<?php echo esc_url(home_url()) ?>"><span>トップ</span></a></li>
                     <li class="p-footer-nav__list"><a href="<?php echo esc_url(home_url('/news'))?>"><span>お知らせ</span></a></li>
-                    <li class="p-footer-nav__list"><a href="#"><span>事業内容</span></a></li>
-                    <li class="p-footer-nav__list"><a href="#"><span>制作実績</span></a></li>
-                    <li class="p-footer-nav__list"><a href="#"><span>企業概要</span></a></li>
+                    <li class="p-footer-nav__list"><a href="<?php echo esc_url(home_url('/content')) ?>"><span>事業内容</span></a></li>
+                    <li class="p-footer-nav__list"><a href="<?php echo esc_url(home_url('/works')) ?>"><span>制作実績</span></a></li>
+                    <li class="p-footer-nav__list"><a href="<?php echo esc_url(home_url('/overview')) ?>"><span>企業概要</span></a></li>
                     <li class="p-footer-nav__list"><a href="<?php echo esc_url(home_url('/blog'))?>"><span>ブログ</span></a></li>
-                    <li class="p-footer-nav__list"><a href="#"><span>お問い合わせ</span></a></li>
+                    <li class="p-footer-nav__list"><a href="<?php echo esc_url(home_url('/contact')) ?>"><span>お問い合わせ</span></a></li>
                 </ol>
             </div>
         </div>

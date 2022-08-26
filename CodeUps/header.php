@@ -27,11 +27,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
     <!-- css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" /> -->
     <!-- <link rel="stylesheet" href="./css/styles.css"> -->
     <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script> -->
     <!-- <script defer src="./js/script.js"></script> -->
     <?php wp_head(); ?>
 </head>
@@ -50,11 +50,11 @@
                 <ol class="p-header-nav__lists">
                     <li class="p-header-nav__list u-mobile"><a href="<?php echo esc_url(home_url('/')) ?>"><span>トップ</span></a></li>
                     <li class="p-header-nav__list"><a href="<?php echo esc_url(home_url('/news')) ?>"><span>お知らせ</span></a></li>
-                    <li class="p-header-nav__list"><a href=""><span>事業内容</span></a></li>
+                    <li class="p-header-nav__list"><a href="<?php echo esc_url(home_url('/content')) ?>"><span>事業内容</span></a></li>
                     <li class="p-header-nav__list"><a href="<?php echo esc_url(home_url('/works')) ?>"><span>制作実績</span></a></li>
-                    <li class="p-header-nav__list"><a href=""><span>企業概要</span></a></li>
+                    <li class="p-header-nav__list"><a href="<?php echo esc_url(home_url('/overview')) ?>"><span>企業概要</span></a></li>
                     <li class="p-header-nav__list"><a href="<?php echo esc_url(home_url('/blog')) ?>"><span>ブログ</span></a></li>
-                    <li class="p-header-nav__list"><a href="">お問い合わせ</a></li>
+                    <li class="p-header-nav__list"><a href="<?php echo esc_url(home_url('/contact')) ?>">お問い合わせ</a></li>
                 </ol>
             </nav>
             <button class="p-header__hamburger-menu p-hamburger-menu js-hamburger">
@@ -68,11 +68,11 @@
         <ol class="p-hamburger-nav__lists">
             <li class="p-hamburger-nav__list"><a href="<?php echo esc_url(home_url('/')) ?>">トップ</a></li>
             <li class="p-hamburger-nav__list"><a href="<?php echo esc_url(home_url('/news')) ?>">お知らせ</a></li>
-            <li class="p-hamburger-nav__list"><a href="">事業内容</a></li>
+            <li class="p-hamburger-nav__list"><a href="<?php echo esc_url(home_url('/content')) ?>">事業内容</a></li>
             <li class="p-hamburger-nav__list"><a href="<?php echo esc_url(home_url('/works')) ?>">制作実績</a></li>
-            <li class="p-hamburger-nav__list"><a href="">企業概要</a></li>
+            <li class="p-hamburger-nav__list"><a href="<?php echo esc_url(home_url('/overview')) ?>">企業概要</a></li>
             <li class="p-hamburger-nav__list"><a href="<?php echo esc_url(home_url('/blog')) ?>">ブログ</a></li>
-            <li class="p-hamburger-nav__list"><a href="">お問い合わせ</a></li>
+            <li class="p-hamburger-nav__list"><a href="<?php echo esc_url(home_url('/contact')) ?>">お問い合わせ</a></li>
         </ol>
     </div>
     <div class="c-pagetop js-pagetop">
@@ -83,7 +83,7 @@
 
         <?php get_template_part('parts/mv') ?>
 
-    <?php elseif (is_home() || is_category() || is_post_type_archive(array('news','works'))) : ?>
+    <?php elseif (is_home() || is_category() || is_post_type_archive(['news','works'])|| is_page(['content','overview'])): ?>
         
         <?php get_template_part('parts/sub-mv') ?>
 
