@@ -85,22 +85,3 @@ $main-view__main_z-index: 2; // main-view swiperがz-index:1;なので + 1
 }
 
 
-////////////////////
-// 非表示設定
-////////////////////
-
-//768px以上を表示
-.u-desktop {
-  display: none;
-
-  @include mq("md") {
-    display: block;
-  }
-}
-
-//モバイルのみ表示
-.u-mobile {
-  @include mq("md") {
-    display: none;
-  }
-}

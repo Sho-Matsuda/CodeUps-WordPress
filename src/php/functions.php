@@ -1,17 +1,37 @@
 <?php
 
+function add_block_editor_styles()
+{
+	/******** Editor CSS ********/
+	$path = '/assets/css/block/block-editor.css'; //ファイル場所 テーマからのパスを指定
+	wp_enqueue_style(
+		'my_guten', //名前
+		get_stylesheet_directory_uri() . $path, //ファイル場所
+		filemtime(get_stylesheet_directory() . $path), //バージョン（更新日時） キャッシュ対策
+	);
+}
+add_action('wp_head', 'add_block_editor_styles');
+add_action('enqueue_block_editor_assets', 'add_block_editor_styles');
+
+
+add_action('wp_enqueue_scripts', function() {
+    wp_deregister_style('wp-block-library');
+});
+
+
 //css js読み込み
 function enqueue_scripts()
 {
 	/******** CSS ********/
 	//Main CSS
-	$path = '/assets/css/style.css'; //ファイル場所 テーマからのパスを指定
+	$path = '/assets/css/style.min.css'; //ファイル場所 テーマからのパスを指定
 	wp_enqueue_style(
 		'main-css', //名前
 		get_stylesheet_directory_uri() . $path, //ファイル場所
 		array('swiper-css'), //これより先に読み込みたいファイル
 		filemtime(get_stylesheet_directory() . $path), //バージョン（更新日時） キャッシュ対策
 	);
+
 	// Swiper CSS
 	$path = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'; //ファイル場所 テーマからのパスを指定
 	wp_enqueue_style(
@@ -37,9 +57,10 @@ function enqueue_scripts()
 		$path, //ファイル場所
 		array('swiper-js'), //これより先に読み込みたいファイル
 		// filemtime(''), //バージョン（更新日時） キャッシュ対策
-	);	
+	);
 	// Swiper JS
 	$path = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js'; //ファイル場所 テーマからのパスを指定
+
 	wp_enqueue_script(
 		'swiper-js', //名前
 		$path, //ファイル場所
@@ -74,7 +95,7 @@ function cpt_register_news()
 		'query_var' => true, //クエリパラメーターを使えるようにする → プレビュー画面を使うためにはtrue
 		'menu_position' => 5, //管理画面に表示するメニューの位置
 		'supports' => [
-			'title', 'editor', 'thumbnail', 'custom-fields','excerpt'
+			'title', 'editor', 'thumbnail', 'custom-fields', 'excerpt'
 		], //カスタム投稿タイプがサポートする機能
 	];
 	register_post_type('news', $args);

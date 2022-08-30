@@ -1,0 +1,166 @@
+@charset "UTF-8";
+body {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.disp-styles-inner {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.disp-styles-wrapper {
+  color: #ffffff;
+  max-width: 800px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  /*** p ***/
+  /*** column ***/
+  /*** list ***/
+  /*** 画像 ***/
+}
+.disp-styles-wrapper > * {
+  margin-bottom: 24px;
+}
+.disp-styles-wrapper .has-text-align-right {
+  text-align: right;
+}
+.disp-styles-wrapper .has-text-align-center {
+  text-align: center;
+}
+.disp-styles-wrapper .has-text-align-left {
+  text-align: left;
+}
+.disp-styles-wrapper h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: inherit;
+  border-left: 3px solid #FFFFFF;
+}
+.disp-styles-wrapper > p {
+  letter-spacing: 0.05em;
+  line-height: 2.1875;
+  font-weight: 300;
+}
+.disp-styles-wrapper .wp-block-columns {
+  justify-content: center;
+}
+.disp-styles-wrapper ol,
+.disp-styles-wrapper ul {
+  counter-reset: item;
+  list-style-type: none;
+  padding-left: 0;
+}
+.disp-styles-wrapper ol ol,
+.disp-styles-wrapper ul ul {
+  padding-left: 1em;
+}
+.disp-styles-wrapper ol li,
+.disp-styles-wrapper ul li {
+  text-indent: -1.3em;
+  padding-left: 1.3em;
+}
+.disp-styles-wrapper ul li:before {
+  /* 以下文字 */
+  content: "・";
+  /* 以下装飾 */
+  font-weight: bold;
+  padding-right: 0.1em;
+  padding-left: 0.1em;
+}
+.disp-styles-wrapper ol li:before {
+  counter-increment: item;
+  /* 以下文字 */
+  content: counter(item);
+  /* 以下装飾 */
+  padding-right: 0.3em;
+  padding-left: 0.3em;
+}
+.disp-styles-wrapper .wp-block-image img {
+  width: auto;
+  height: 100%;
+}
+.disp-styles-wrapper .wp-block-image .alignright img {
+  margin-left: auto;
+  margin-right: 0;
+}
+.disp-styles-wrapper .wp-block-image figcaption {
+  text-align: center;
+}
+.disp-styles-wrapper .wp-block-image .alignright img {
+  margin-left: auto;
+  margin-right: 0;
+}
+.disp-styles-wrapper .wp-block-image .alignleft img {
+  margin-left: 0;
+  margin-right: auto;
+}
+.disp-styles-wrapper .wp-block-image .aligncenter img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.block-editor-block-list__layout > * {
+  width: 100%;
+}
+
+.editor-styles-wrapper.block-editor-writing-flow {
+  color: #000000;
+  /*** column ***/
+}
+.editor-styles-wrapper.block-editor-writing-flow h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0.3125rem;
+  bottom: 0;
+  right: 0;
+  height: inherit;
+  border-left: 3px solid #111111;
+}
+.editor-styles-wrapper.block-editor-writing-flow .wp-block-columns {
+  justify-content: center;
+}
+
+.disp-styles-wrapper,
+.editor-styles-wrapper.block-editor-writing-flow {
+  font-family: "Noto Sans JP", sans-serif;
+}
+.disp-styles-wrapper h1, .disp-styles-wrapper h2, .disp-styles-wrapper h3, .disp-styles-wrapper h4, .disp-styles-wrapper h5, .disp-styles-wrapper h6,
+.editor-styles-wrapper.block-editor-writing-flow h1,
+.editor-styles-wrapper.block-editor-writing-flow h2,
+.editor-styles-wrapper.block-editor-writing-flow h3,
+.editor-styles-wrapper.block-editor-writing-flow h4,
+.editor-styles-wrapper.block-editor-writing-flow h5,
+.editor-styles-wrapper.block-editor-writing-flow h6 {
+  font-weight: normal;
+}
+.disp-styles-wrapper h2,
+.editor-styles-wrapper.block-editor-writing-flow h2 {
+  position: relative;
+  font-size: 1.25rem;
+  line-height: 1.45;
+  letter-spacing: 0.1em;
+  padding-left: 0.9375rem;
+}
+.disp-styles-wrapper h3,
+.editor-styles-wrapper.block-editor-writing-flow h3 {
+  position: relative;
+  font-size: 1.125rem;
+  line-height: 1.444444;
+  letter-spacing: 0.111111em;
+}
+.disp-styles-wrapper h3::before,
+.editor-styles-wrapper.block-editor-writing-flow h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FFEA2E 73px, #111111 73px);
+}

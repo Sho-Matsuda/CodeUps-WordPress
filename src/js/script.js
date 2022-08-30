@@ -135,7 +135,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   //サムネイル
   var thumbs = new Swiper('.js-works-single-thumb-swiper', {
     slidesPerView: 'auto',
-    // spaceBetween: 10,
+    // spaceBetween: 24, 
     centeredSlides: true,
     loop: true,
     slideToClickedSlide: true,
@@ -145,6 +145,5 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   //メインとサムネイルを紐づける
   slider.controller.control = thumbs;
   thumbs.controller.control = slider;
-
 });
 

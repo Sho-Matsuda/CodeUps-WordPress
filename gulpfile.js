@@ -11,10 +11,11 @@ const notify = require("gulp-notify"); //タスクが完了したらメッセー
 
 // ソースフォルダ
 const srcPath = {
-  scss: "./src/sass/**/*.scss",
+  scss: "./src/css/sass/**/*.scss",
+  block_scss: "./src/css/block/*.scss",
   js: "./src/js/**/*.js",
   img: "./src/images/**/*",
-  php: "./src/**/*.php",
+  php: "./src/php/**/*.php",
 };
 
 // WordPress　Localフォルダのディレクトリ
@@ -24,6 +25,7 @@ const themeDir = `${userDir}/Local Sites/CodeUps/app/public/wp-content/themes/Co
 // WordPressフォルダ　　出力先
 const destWpPath = {
   css: `${themeDir}/assets/css/`,
+  block_css: `${themeDir}/assets/css/block/`,
   js: `${themeDir}/assets/js/`,
   img: `${themeDir}/assets/images/`,
   php: `${themeDir}/`,
@@ -79,7 +81,7 @@ const cssSass = (done) => {
       }))
     .pipe(sassGlob())  // Sassの@import/@useにおけるglobを有効にする
     .pipe(sass.sync({
-      includePaths: ['src/sass'],
+      includePaths: ['src/css/sass'],
       outputStyle: 'expanded'
     }))
     .pipe(postcss([cssnext(browsers)]))
@@ -114,9 +116,15 @@ const minifyCss = (done) => {
       message: 'min.css生成 完了！',//文字は好きなものに変更してね！
       onLast: true
     }));
-    done();
+  done();
 };
 
+// block scss
+const blockSass = () => {
+  return src(srcPath.block_scss)
+    .pipe(sass({ outputStyle: 'expanded' }))
+    .pipe(dest(destWpPath.block_css));
+}
 
 // JS
 const uglify = require("gulp-uglify");
@@ -161,13 +169,14 @@ const imageCompression = () => {
 // ファイルの変更を検知
 const watchFiles = () => {
   watch(srcPath.php, series(phpDest, browserSyncReload));
-  watch(srcPath.scss, series(cssSass,minifyCss, browserSyncReload));
+  watch(srcPath.scss, series(cssSass, minifyCss, browserSyncReload));
   watch(srcPath.js, series(jsMin, browserSyncReload));
   watch(srcPath.img, series(imageCompression, browserSyncReload));
+  watch(srcPath.block_scss, series(blockSass, browserSyncReload));
 };
 
 // npx gulpで出力する内容
 exports.default = series(
-  series(phpDest,cssSass, minifyCss ,jsMin, imageCompression), //順番に処理
+  series(phpDest, cssSass, minifyCss, jsMin, imageCompression,blockSass), //順番に処理
   parallel(watchFiles, browserSyncFunc) //同時に処理
 );

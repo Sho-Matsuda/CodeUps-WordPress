@@ -1,0 +1,257 @@
+@use "./../sass/global/" as *;
+
+// 表示画面
+.disp-styles-inner {
+    padding-left: $padding-sp;
+    padding-right: $padding-sp;
+}
+
+.disp-styles-wrapper {
+    color: #ffffff;
+    max-width: 800px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    // ブロック間隔
+    &>* {
+        margin-bottom: 24px;
+    }
+
+    .has-text-align-right {
+        text-align: right;
+    }
+
+    .has-text-align-center {
+        text-align: center;
+    }
+
+    .has-text-align-left {
+        text-align: left;
+    }
+
+    // h2
+    & h2::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: inherit;
+        border-left: 3px solid $white;
+        // display: inline-block;
+        // margin-left: $padding-sp;
+    }
+
+    /*** p ***/
+    &>p {
+        letter-spacing: 0.05em;
+        line-height: 2.1875;
+        font-weight: 300;
+    }
+
+    /*** column ***/
+    // center
+    & .wp-block-columns {
+        justify-content: center;
+    }
+
+
+    /*** list ***/
+    ol,
+    ul {
+        counter-reset: item;
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    ol ol,
+    ul ul {
+        padding-left: 1em;
+    }
+
+    ol li,
+    ul li {
+        text-indent: -1.3em;
+        padding-left: 1.3em;
+    }
+
+    // 「・」調整
+    ul li:before {
+        /* 以下文字 */
+        content: '・';
+
+        /* 以下装飾 */
+        font-weight: bold;
+        padding-right: .1em;
+        padding-left: .1em;
+    }
+
+    // 数字調整
+    ol li:before {
+        counter-increment: item;
+
+        /* 以下文字 */
+        content: counter(item);
+
+        /* 以下装飾 */
+        padding-right: .3em;
+        padding-left: .3em;
+    }
+
+    // &>*:not(.wp-block-image):not(h2) {
+    //     padding-left: $padding-sp;
+    //     padding-right: $padding-sp;
+    // }
+
+
+
+    /*** 画像 ***/
+    & .wp-block-image img {
+        // max-width: rem(500);
+        // width: 100%;
+        width: auto;
+        height: 100%;
+    }
+
+    & .wp-block-image .alignright img {
+        margin-left: auto;
+        margin-right: 0;
+
+    }
+
+    // caption
+    & .wp-block-image figcaption {
+        text-align: center;
+    }
+
+
+    & .wp-block-image .alignright img {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    & .wp-block-image .alignleft img {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    & .wp-block-image .aligncenter img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+
+}
+
+.block-editor-block-list__layout {
+    &>* {
+        width: 100%;
+    }
+}
+
+// 編集画面
+.editor-styles-wrapper.block-editor-writing-flow {
+    color: #000000;
+
+    //
+
+
+    & h2::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: rem(5);
+        bottom: 0;
+        right: 0;
+        height: inherit;
+        border-left: 3px solid $black;
+
+    }
+
+    /*** column ***/
+    // center
+    & .wp-block-columns {
+        justify-content: center;
+    }
+}
+
+// 表示画面 & 編集画面
+.disp-styles-wrapper,
+.editor-styles-wrapper.block-editor-writing-flow {
+    font-family: "Noto Sans JP", sans-serif;
+
+    & h1,
+    & h2,
+    & h3,
+    & h4,
+    & h5,
+    & h6 {
+        font-weight: normal;
+    }
+
+    & h2 {
+        position: relative;
+        font-size: rem(20); // 文字数　初期値
+        line-height: 1.45;
+        letter-spacing: 0.1em;
+        padding-left: calc(rem(15));
+    }
+
+    & h3 {
+        position: relative;
+        // display: block;
+        // justify-content: center;
+        // margin: auto;
+        font-size: rem(18); // 文字数　初期値
+        line-height: 1.444444;
+        letter-spacing: 0.111111em;
+    }
+
+    & h3::before {
+        content: '';
+        // display: inline;
+
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #FFEA2E 73px, $black 73px);
+
+        // margin-left: $padding-sp;
+        // margin-right: $padding-sp;
+    }
+
+    // & h3 {
+    //     position: relative;
+    //     display: inline-block;
+    //     // margin: auto;
+    //     font-size: rem(18); // 文字数　初期値
+    //     line-height: 1.444444;
+    //     letter-spacing: 0.111111em;
+    // }
+
+    // & h3::before {
+    //     content: '';
+    //     display: block;
+
+    //     position: absolute;
+    //     left: 0;
+    //     bottom: -3px;
+    //     right: 0;
+    //     height: 3px;
+    //     background: linear-gradient(90deg, #FFEA2E 73px, $black 73px);
+
+    //     margin-left: $padding-sp;
+    //     margin-right: $padding-sp;
+    // }
+
+}
+
+
+// .disp-styles-wrapper>div {
+//     width: 100%;
+// }

@@ -97,7 +97,6 @@
         <div class="p-works__main c-top-card c-top-card--forward">
             <div class="c-top-card__inner ">
                 <div class="c-top-card__images">
-
                     <!-- Swiper -->
                     <div class="swiper js-works-swiper">
                         <div class="swiper-wrapper">
@@ -114,6 +113,7 @@
                     </div>
                     <div class="swiper-pagination js-workds-swiper-pagination"></div>
                 </div>
+
                 <div class="c-top-card__main">
                     <h3 class="c-top-card__title">メインタイトルが入ります。</h3>
                     <div class="c-top-card__text">
@@ -137,7 +137,9 @@
         <div class="p-overview__main c-top-card c-top-card--reverse">
             <div class="c-top-card__inner ">
                 <div class="c-top-card__images">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/images/overview1.jpg" alt="制作実績1">
+                    <div class="c-top-card__image">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/images/overview1.jpg" alt="制作実績1">
+                    </div>
                 </div>
                 <div class="c-top-card__main">
                     <h3 class="c-top-card__title">メインタイトルが入ります。</h3>
