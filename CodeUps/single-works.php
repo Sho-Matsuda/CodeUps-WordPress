@@ -8,14 +8,14 @@
 
 
 <?php
-$cf_group = SCF::get('slide_images');
-foreach ($cf_group as $field_name => $field_value ) {
+$images = SCF::get('slide_images');
+foreach ($images as $field_name => $field_value ): 
     // echo $field_value['slide_image'];
     $cf_sample = wp_get_attachment_image_src($field_value['slide_image'],'large');
     $imgUrl = esc_url($cf_sample[0]);
-    echo $imgUrl;
-}
 ?>
+    <p><?php echo $imgUrl ?></p>
+<?php endforeach; ?>
     <?php
     if (have_posts()) :
         $company = SCF::get('company');
